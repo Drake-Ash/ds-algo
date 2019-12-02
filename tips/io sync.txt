@@ -1,0 +1,6 @@
+**Add this to remove io sync. (boosts C++ to almost C performance)
+
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+
+**Use with caution
