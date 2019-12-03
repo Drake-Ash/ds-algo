@@ -17,18 +17,18 @@ void print_list(vector<int> &arr, int start, int end){
     cout<<"...]"<<endl;
 }
 
-void selection_sort(vector<int> &arr){
+void insertion_sort(vector<int> &arr){
     int i, j, temp, k;
-    for(i = 0; i < arr.size(); i++){
-        temp = i;
-        for(j = i + 1; j < arr.size(); j++){
-            if(arr[j] < arr[temp])
-                temp = j;
-            print_list(arr);
+    for(i = 1; i < arr.size(); i++){
+        for(j = i; j >= 0; j--){
+            if(arr[j] < arr[j-1]){
+                 k = arr[j];
+                 arr[j] = arr[j-1];
+                 arr[j-1] = k; 
+            }
+            else
+                k = -1;
         }
-        k = arr[temp];
-        arr[temp] = arr[i];
-        arr[i] = k;
     }
 }
 
@@ -42,7 +42,7 @@ int main(){
         cin>>temp;
         arr.push_back(temp);
     }
-    selection_sort(arr);
+    insertion_sort(arr);
     print_list(arr);
     return 0;
 }
