@@ -27,7 +27,7 @@ void insertion_sort(vector<int> &arr){
                  arr[j-1] = k; 
             }
             else
-                k = -1;
+                j = -1;
         }
     }
 }
